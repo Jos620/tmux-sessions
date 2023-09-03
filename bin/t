@@ -84,7 +84,6 @@ get_fzf_find_binding() {
 }
 FIND_BIND=$(get_fzf_find_binding)
 
-BORDER_LABEL=" t - smart tmux session manager "
 HEADER=" ^s sessions ^x zoxide ^f find"
 SESSION_BIND="ctrl-s:change-prompt(sessions> )+reload(tmux list-sessions -F '#S')"
 ZOXIDE_BIND="ctrl-x:change-prompt(zoxide> )+reload(zoxide query -l | sed -e \"$HOME_REPLACER\")"
@@ -122,7 +121,6 @@ else # argument not provided
 				--bind "$SESSION_BIND" \
 				--bind "$TAB_BIND" \
 				--bind "$ZOXIDE_BIND" \
-				--border-label "$BORDER_LABEL" \
 				--header "$HEADER" \
 				--no-sort \
 				--prompt "$PROMPT" \
@@ -136,7 +134,6 @@ else # argument not provided
 				--bind "$SESSION_BIND" \
 				--bind "$TAB_BIND" \
 				--bind "$ZOXIDE_BIND" \
-				--border-label "$BORDER_LABEL" \
 				--header "$HEADER" \
 				--no-sort \
 				--prompt "$PROMPT"
@@ -147,7 +144,6 @@ else # argument not provided
 			(zoxide query -l | sed -e "$HOME_REPLACER") | fzf \
 				--bind "$FIND_BIND" \
 				--bind "$TAB_BIND" \
-				--border-label "$BORDER_LABEL" \
 				--header " ^f find" \
 				--no-sort \
 				--prompt "$PROMPT"
